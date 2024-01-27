@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flix</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="browse.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.1/css/all.min.css" integrity="sha512-/RUbtHakVMJrg1ILtwvDIceb/cDkk97rWKvfnFSTOmNbytCyEylutDqeEr9adIBye3suD3RfcsXLOLBqYRW4gw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="app.js"></script>
-    <script src="movies.js"></script>
 </head>
 <body>
    <div class="container">
@@ -16,13 +14,13 @@
                 <img class="nav__logo" src="assets/the word 'Flixr' in black letters 1 (1).png" alt="">
                 <ul class="nav__list">
                     <li>
-                        <a class="nav__link" href="">Home</a>
+                        <a class="nav__link link__hover-effect" href="">Home</a>
                     </li>
                     <li>
-                        <a class="nav__link" href="">Browse</a>
+                        <a class="nav__link link__hover-effect" href="">Browse</a>
                     </li>
                     <li>
-                        <a class="nav__link" href="">About Flix</a>
+                        <a class="nav__link link__hover-effect" href="">About Flix</a>
                     </li>
                     <li>
                         <a class="nav__link--primary" href="">Contact</a>
@@ -33,17 +31,31 @@
                 <div class="title">
                     <h2>Browse Our Movies</h2>
                 </div>
-                <input type="text" placeholder="Search for your favourite titles in our expansive library">
+                <input type="search" id="movieSearch" placeholder="Search our library for your favourite titles..." onsearch="searchMovie(event)">
                 <i class="fas fa-search"></i>
             </div>
         </nav>
-    </div>    
+    </div>
+    
+    <img class="cinema__img" src="https://hips.hearstapps.com/hmg-prod/images/clapper-board-movies-1569418835.jpg?resize=2048:*" alt="">
 
-
-    <section>
-
-    </section>
-
-
+    <div class="row">
+        <div class="results__container"></div>
+        <div class="sort__movie">
+          <p class="filter__text">Filter:</p><select class="filter" id="filter" onchange="filterMovies(event)">
+            <option value="">Sort</option>
+            <option value="Newest">Newest</option>
+            <option value="Oldest">Oldest</option>
+          </select>
+        </div>
+        <div class="movies__container">
+          <i class="fas fa-spinner movies__loading--spinner"></i>
+          <div class="movie-list">
+          </div>  
+        </div>
+      </div>
+    </div>
+    
 </body>
+<script src="browse.js"></script>
 </html>
