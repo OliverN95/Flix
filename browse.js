@@ -29,7 +29,7 @@ async function getMovie(name) {
     const moviesResult = await fetch(`https://www.omdbapi.com/?apikey=28916474&s=${name}`);
     const moviesData = await moviesResult.json();
     const selectBox = document.getElementById("filter");
-    moviesLoading.classList.remove('movies__loading'); //delete loading state class after successfully retrieving the API call
+    moviesLoading.classList.remove('movies__loading'); //deleted loading state class after successfully retrieving the API call
     if(moviesData.Response === 'False') {
         selectBox.selectedIndex = 0;
         moviesListEl.innerHTML = `<h2>Sorry, there were no results related to the search: "${name}"</h2>`

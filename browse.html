@@ -1,45 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flix</title>
-    <link rel="stylesheet" href="browse.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.4.1/css/all.min.css" integrity="sha512-/RUbtHakVMJrg1ILtwvDIceb/cDkk97rWKvfnFSTOmNbytCyEylutDqeEr9adIBye3suD3RfcsXLOLBqYRW4gw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-   <div class="container">
-        <nav>
-            <div class="nav__options">
-                <img class="nav__logo" src="assets/the word 'Flixr' in black letters 1 (1).png" alt="">
-                <ul class="nav__list">
-                    <li>
-                        <a class="nav__link link__hover-effect" href="">Home</a>
-                    </li>
-                    <li>
-                        <a class="nav__link link__hover-effect" href="">Browse</a>
-                    </li>
-                    <li>
-                        <a class="nav__link link__hover-effect" href="">About Flix</a>
-                    </li>
-                    <li>
-                        <a class="nav__link--primary" href="">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="browse">
-                <div class="title">
-                    <h2>Browse Our Movies</h2>
-                </div>
-                <input type="search" id="movieSearch" placeholder="Search our library for your favourite titles..." onsearch="searchMovie(event)">
-                <i class="fas fa-search"></i>
-            </div>
-        </nav>
-    </div>
-    
-    <img class="cinema__img" src="https://hips.hearstapps.com/hmg-prod/images/clapper-board-movies-1569418835.jpg?resize=2048:*" alt="">
 
-    <div class="row">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="browse.css">
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <title>Week 4 FP</title>
+</head>
+
+<body>
+    <nav>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="search__container">
+          <div class="search__bar">
+            <i class="fa fa-search"></i>
+            <input class="search__box" id="movieSearch" type="search" placeholder="Search our titles..." onsearch="searchMovie(event)">
+          </div>
+        </div>
         <div class="results__container"></div>
         <div class="sort__movie">
           <p class="filter__text">Filter:</p><select class="filter" id="filter" onchange="filterMovies(event)">
@@ -55,7 +36,8 @@
         </div>
       </div>
     </div>
-    
+  </div>
 </body>
 <script src="browse.js"></script>
+
 </html>
