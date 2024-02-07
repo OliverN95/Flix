@@ -1,15 +1,10 @@
 // api: https://www.omdbapi.com/?i=tt3896198&apikey=e5f3f60d&s=fast //
 
-
-// 1. Variable storage section linking JS with HTML //
-
 const moviesListEl = document.querySelector(".movie-list");
 const moviesLoading = document.querySelector(".movies__container");
 const moviesRefresh = document.querySelector(".movie-list");
 const searchResults = document.querySelector(".results__container");
 
-
-// 2. Look through the given API using the input text searched
 
 function searchMovie(name) {
     const movieName = name.target.value;
@@ -22,8 +17,6 @@ function searchMovie(name) {
     searchResults.innerHTML = `<h2>Search Results for: ${movieName} </h2>`
 }
 
-
-// 3. Render first 6 movies given the input text
 
 async function getMovie(name) {
     const moviesResult = await fetch(`https://www.omdbapi.com/?apikey=28916474&s=${name}`);
@@ -45,8 +38,6 @@ async function getMovie(name) {
 }
 
 
-// 4. Render a HTML movie card for each movie
-
 function movieHTML(movie) {
     return `<div class="movie-card">
     <div class="movie-card__container">
@@ -59,14 +50,10 @@ function movieHTML(movie) {
 }
 
 
-// 5. Render Filtered movies (event.target.value) 
-
 function filterMovies(event) {
     renderFilteredMovies(event.target.value);
 }
 
-
-// 6. Filter if newest or oldest
 
 function renderFilteredMovies(filter) {
     if(filter === 'Oldest') {
@@ -81,8 +68,6 @@ function renderFilteredMovies(filter) {
     moviesListEl.innerHTML = movies.map((movie) => movieHTML(movie)).join("");
 }
 
-
-// 7. Refresh function resetting to initial state 
 
 function refreshMovies() {
     return ``;
